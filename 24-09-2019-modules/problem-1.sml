@@ -20,14 +20,15 @@ functor QSort (O : ORD_KEY) : SORT = struct
 	  | great (y::ys) x = if(O.compare (x,y) = LESS) then y::(great ys x)
 						  else (great ys x) 
 	
-	fun sort (x::xs) = (sort (less xs x)) @ [x] @ (sort (great xs x)) ; 
+	fun sort [] = []
+	  | sort (x::xs) = (sort (less xs x)) @ [x] @ (sort (great xs x)) ; 
 end
 
 structure IntOrd : ORD_KEY = struct
 	type ord_key      = int
 	fun compare (x,y) = Int.compare (x,y)
-end
+end ;
 
-structure A = QSort (IntOrd) 
+structure A = QSort (IntOrd) ;
 
-A.sort [ 7, 2, 5, 4 ]  
+A.sort [ 7, 2, 5, 4 ]  ;
