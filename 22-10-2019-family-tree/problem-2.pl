@@ -3,7 +3,7 @@ man(shiv).
 man(sanjay).
 man(vijay).
 man(vinny).
-woman(urmila)
+woman(urmila).
 woman(kusum).
 woman(tanu).
 parent(sanjay, shiv).
