@@ -76,4 +76,25 @@ fn main()
     //println!("y5 = {0}", y5);    
     println!("z5 = {0}", z5);
 
+
+	/*********** changing variable without exactly changing it **********/
+	
+	let mut x6 = 50 ;               //won't work
+	{
+		let mut y6 = x6;
+		y6 = 100;
+	}
+	println!("x6 = {0}", x6);  
+	
+	let mut x7 = 50 ;               //works & changes x7
+	{
+		let mut y7 = &mut x7;
+		*y7 = 100;
+	}
+	println!("x7 = {0}", x7);  
 }
+
+
+
+
+
